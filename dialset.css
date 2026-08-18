@@ -1,0 +1,165 @@
+/* dialset.css — HG樂遊 老虎機操作介面指南 */
+
+:root{
+  --ivory:#faf8f3;
+  --ivory-2:#ffffff;
+  --ivory-3:#f0ede5;
+  --forest:#166534;
+  --forest-hi:#15803d;
+  --forest-dim:#0f4525;
+  --graphite:#1c1c1a;
+  --slate:#5d5f58;
+  --hair:rgba(28,28,26,.11);
+  --hair-2:rgba(28,28,26,.2);
+  --span:1080px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ivory);color:var(--graphite);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.mid{max-width:var(--span);margin:0 auto;padding:0 24px}
+
+/* ── 頂欄：小標記＋置中導覽 ─────────────── */
+.rail{position:sticky;top:0;z-index:80;background:rgba(250,248,243,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.rail-in{max-width:1200px;margin:0 auto;padding:0 24px;height:52px;display:flex;align-items:center;gap:18px}
+.tagmark{
+  display:flex;align-items:center;gap:7px;text-decoration:none;flex-shrink:0;
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
+  font-weight:800;font-size:16px;letter-spacing:-.02em;
+}
+.tagmark s{
+  text-decoration:none;width:20px;height:20px;border-radius:5px;
+  background:var(--forest);color:var(--ivory);
+  display:grid;place-items:center;font-size:11px;font-weight:800;
+}
+.railnav{display:flex;gap:24px;flex:1;justify-content:center}
+.railnav a{text-decoration:none;color:var(--slate);font-size:13.5px}
+.railnav a:hover{color:var(--forest)}
+.pill{
+  display:inline-block;text-decoration:none;border-radius:999px;
+  font-size:13.5px;font-weight:600;padding:7px 17px;
+  background:var(--forest);color:var(--ivory-2);transition:background .14s ease;
+}
+.pill:hover{background:var(--forest-hi)}
+.pill-line{background:transparent;color:var(--graphite);border:1px solid var(--hair-2)}
+.pill-line:hover{background:var(--ivory-3)}
+.pill-xl{padding:13px 32px;font-size:16px}
+
+/* ── 堆疊區段：置中標題／副標／按鈕／大圖 ── */
+.deck{padding:82px 0 0;text-align:center;border-bottom:1px solid var(--hair)}
+.deck-tint{background:var(--ivory-3)}
+.deck-white{background:var(--ivory-2)}
+.deck h1{
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
+  font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.14;
+  letter-spacing:-.03em;margin:0 auto 16px;max-width:16ch;
+}
+.deck h2{
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
+  font-weight:800;font-size:clamp(25px,3.3vw,38px);line-height:1.18;
+  letter-spacing:-.025em;margin:0 auto 14px;max-width:18ch;
+}
+.deck h1 i,.deck h2 i{font-style:normal;color:var(--forest)}
+.deck .sub{color:var(--slate);font-size:17px;max-width:44ch;margin:0 auto 26px}
+.deck .acts{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.deck-shot{max-width:920px;margin:0 auto;padding:0 24px}
+.deck-shot img{width:100%;height:430px;object-fit:cover;border-radius:16px 16px 0 0;border:1px solid var(--hair);border-bottom:0}
+.deck-shot-sm img{height:330px}
+
+/* ── 數據橫列 ─────────────────────────────── */
+.gauge{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--hair);background:var(--ivory-2)}
+.gauge div{padding:26px 20px;text-align:center;border-right:1px solid var(--hair)}
+.gauge div:last-child{border-right:0}
+.gauge b{display:block;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:29px;line-height:1;color:var(--forest);margin-bottom:6px;font-weight:800}
+.gauge span{font-size:13px;color:var(--slate)}
+
+/* ── 一般內容區 ───────────────────────────── */
+.block{padding:78px 0;border-bottom:1px solid var(--hair)}
+.block-tint{background:var(--ivory-3)}
+.block-head{max-width:620px;margin:0 auto 40px;text-align:center}
+.block-head h2{
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
+  font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.025em;line-height:1.2;margin:0 0 12px;
+}
+.block-head h2 i{font-style:normal;color:var(--forest)}
+.block-head p{margin:0;color:var(--slate);font-size:16px}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{
+  background:var(--ivory-2);border:1px solid var(--hair);border-radius:14px;
+  overflow:hidden;text-decoration:none;display:flex;flex-direction:column;
+  transition:border-color .15s ease,transform .15s ease;
+}
+.block-tint .tile{background:var(--ivory)}
+.tile:hover{border-color:var(--forest);transform:translateY(-3px)}
+.tile img{width:100%;height:164px;object-fit:cover}
+.tile-in{padding:20px 20px 24px;flex:1}
+.tile-k{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;letter-spacing:.13em;color:var(--forest);margin-bottom:8px;font-weight:700}
+.tile h3{font-size:18px;margin:0 0 8px;font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;font-weight:800;letter-spacing:-.015em}
+.tile p{margin:0;font-size:14px;color:var(--slate);line-height:1.7}
+
+/* 對照表 */
+.grid-wrap{overflow-x:auto;border:1px solid var(--hair);border-radius:14px;background:var(--ivory-2)}
+.block-tint .grid-wrap{background:var(--ivory)}
+.gtab{width:100%;border-collapse:collapse;font-size:14.5px}
+.gtab th,.gtab td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--hair)}
+.gtab th{font-size:11.5px;letter-spacing:.09em;color:var(--slate);font-weight:700}
+.gtab td b{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--forest);font-size:16px}
+.gtab tr:last-child td{border-bottom:0}
+
+/* 條列 */
+.notes{border-top:1px solid var(--hair);max-width:820px;margin:0 auto}
+.note{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:21px 0;border-bottom:1px solid var(--hair)}
+.note b{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:14px;color:var(--forest);font-weight:800}
+.note h4{margin:0 0 5px;font-size:16.5px}
+.note p{margin:0;font-size:14.5px;color:var(--slate)}
+
+/* 頁腳 */
+.tailfoot{padding:52px 0 28px;background:var(--ivory-2)}
+.tf-row{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:30px}
+.tailfoot h5{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;letter-spacing:.13em;color:var(--slate);margin:0 0 12px;font-weight:700}
+.tailfoot a{display:block;text-decoration:none;color:var(--slate);font-size:14px;padding:5px 0}
+.tailfoot a:hover{color:var(--forest)}
+.tf-note{color:var(--slate);font-size:13px;line-height:1.8;margin:0}
+.tf-end{border-top:1px solid var(--hair);padding-top:19px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--slate)}
+
+/* 內頁正文 */
+.prose{max-width:760px;margin:0 auto}
+.prose h2{
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
+  font-weight:800;font-size:24px;margin:40px 0 13px;letter-spacing:-.025em;
+}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:17px;margin:26px 0 9px;color:var(--forest)}
+.prose p{margin:0 0 16px;color:var(--slate)}
+.prose ul{margin:0 0 18px;padding-left:20px;color:var(--slate)}
+.prose li{margin-bottom:8px}
+.prose strong{color:var(--graphite)}
+.shot{margin:28px 0}
+.shot img{width:100%;height:300px;object-fit:cover;border-radius:13px;border:1px solid var(--hair)}
+.shot figcaption{font-size:12.5px;color:var(--slate);padding-top:9px;text-align:center}
+
+@media(max-width:940px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .gauge{grid-template-columns:repeat(2,1fr)}
+  .gauge div:nth-child(2){border-right:0}
+  .gauge div:nth-child(1),.gauge div:nth-child(2){border-bottom:1px solid var(--hair)}
+  .tf-row{grid-template-columns:1fr 1fr}
+  .railnav{display:none}
+  .deck-shot img{height:300px}
+}
+@media(max-width:580px){
+  .tiles{grid-template-columns:1fr}
+  .gauge{grid-template-columns:1fr}
+  .gauge div{border-right:0;border-bottom:1px solid var(--hair)}
+  .tf-row{grid-template-columns:1fr}
+  .note{grid-template-columns:1fr;gap:5px}
+  .deck{padding-top:56px}
+  .pill-line{display:none}
+}
