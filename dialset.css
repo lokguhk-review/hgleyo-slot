@@ -58,14 +58,15 @@ a{color:inherit}
 .deck h1{
   font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
   font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.14;
-  letter-spacing:-.03em;margin:0 auto 16px;max-width:16ch;
+  letter-spacing:-.03em;margin:0 auto 16px;max-width:min(760px,100%);
 }
 .deck h2{
   font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
   font-weight:800;font-size:clamp(25px,3.3vw,38px);line-height:1.18;
-  letter-spacing:-.025em;margin:0 auto 14px;max-width:18ch;
+  letter-spacing:-.025em;margin:0 auto 14px;max-width:min(620px,100%);
 }
-.deck h1 i,.deck h2 i{font-style:normal;color:var(--forest)}
+/* 後半意群獨立成行：斷點固定落在語意邊界，避免中文標題被切出孤字 */
+.deck h1 i,.deck h2 i{font-style:normal;color:var(--forest);display:block}
 .deck .sub{color:var(--slate);font-size:17px;max-width:44ch;margin:0 auto 26px}
 .deck .acts{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
 .deck-shot{max-width:920px;margin:0 auto;padding:0 24px}
