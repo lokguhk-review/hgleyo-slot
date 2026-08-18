@@ -58,15 +58,15 @@ a{color:inherit}
 .deck h1{
   font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
   font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.14;
-  letter-spacing:-.03em;margin:0 auto 16px;max-width:min(760px,100%);
+  letter-spacing:-.03em;margin:0 auto 16px;max-width:100%;text-wrap:balance;
 }
 .deck h2{
   font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,sans-serif;
   font-weight:800;font-size:clamp(25px,3.3vw,38px);line-height:1.18;
-  letter-spacing:-.025em;margin:0 auto 14px;max-width:min(620px,100%);
+  letter-spacing:-.025em;margin:0 auto 14px;max-width:100%;text-wrap:balance;
 }
-/* 後半意群獨立成行：斷點固定落在語意邊界，避免中文標題被切出孤字 */
-.deck h1 i,.deck h2 i{font-style:normal;color:var(--forest);display:block}
+/* 桌面一行排完；窄螢幕放不下時才斷，且斷點固定落在語意邊界（見 580px 斷點） */
+.deck h1 i,.deck h2 i{font-style:normal;color:var(--forest)}
 .deck .sub{color:var(--slate);font-size:17px;max-width:44ch;margin:0 auto 26px}
 .deck .acts{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
 .deck-shot{max-width:920px;margin:0 auto;padding:0 24px}
@@ -154,6 +154,11 @@ a{color:inherit}
   .tf-row{grid-template-columns:1fr 1fr}
   .railnav{display:none}
   .deck-shot img{height:300px}
+}
+/* 620px 起：最長標題一行已快塞不下，提前讓後半意群自己成行，
+   斷點固定落在語意邊界，不會被切在句子中間 */
+@media(max-width:620px){
+  .deck h1 i,.deck h2 i{display:block}
 }
 @media(max-width:580px){
   .tiles{grid-template-columns:1fr}
